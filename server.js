@@ -5,10 +5,10 @@ const path = require('path');
 
 const app = express();   
 
-app.use(express.static('./src/app'));
+app.use(express.static('./dist/desapp-grupo-o-fronted'));
 
 app.get('/*', function(req, res) {
-    res.sendFile('app.component.html', {root: 'src/app/'}
+    res.sendFile('index.html', {root: 'dist/desapp-grupo-o-fronted/'}
   );
 }); 
 
