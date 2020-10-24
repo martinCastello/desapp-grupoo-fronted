@@ -12,6 +12,7 @@ import { NavbarComponent } from './dashboard/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 
 import { ResgisterComponent } from './resgister/resgister.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ResgisterComponent } from './resgister/resgister.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

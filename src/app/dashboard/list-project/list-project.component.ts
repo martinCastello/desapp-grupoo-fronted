@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectService } from 'src/app/services/project.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 @Component({
   selector: 'app-list-project',
@@ -8,11 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class ListProjectComponent implements OnInit {
   //variable para la carga de un proyecto
   project = '';
-  //list iria con la clase nuestra 
+  //list iria con la clase nuestra
   listProject: any[]=[];
-  constructor() { }
+  constructor(private service: ProjectService) { }
 
   ngOnInit(): void {
+    this.service.listar().subscribe(ps => this.listProject = ps);
   }
   //metodo para imprimir el proyecto
   addProject(){
